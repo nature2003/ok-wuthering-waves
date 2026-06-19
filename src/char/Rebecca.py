@@ -21,7 +21,7 @@ class Rebecca(BaseChar):
 
         self.perform_enhanced_heavy()
 
-        if not self.need_fast_perform() and self.click_liberation(wait_if_cd_ready=0):
+        if not self.need_fast_perform() and self.click_liberation(send_click=True, wait_if_cd_ready=0):
             self.perform_hmg_mode()
             return self.switch_next_char()
 
