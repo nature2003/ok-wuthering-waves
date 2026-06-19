@@ -25,7 +25,7 @@ class Lucy(BaseChar):
                 self.perform_algorithm_compaction()
                 return self.switch_next_char()
 
-        if not self.need_fast_perform() and self.click_liberation(wait_if_cd_ready=0):
+        if not self.need_fast_perform() and self.click_liberation(send_click=True, wait_if_cd_ready=0):
             self.f_break()
             return self.switch_next_char()
 
@@ -51,10 +51,10 @@ class Lucy(BaseChar):
             if self.need_fast_perform():
                 return False
             if self.is_forte_full() and self.perform_multi_threading():
-                if self.click_liberation(wait_if_cd_ready=0):
+                if self.click_liberation(send_click=True, wait_if_cd_ready=0):
                     self.f_break()
                 return True
-            if self.click_liberation(wait_if_cd_ready=0):
+            if self.click_liberation(send_click=True, wait_if_cd_ready=0):
                 self.f_break()
                 return True
             self.click()
